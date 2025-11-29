@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { AppTile } from "@/components/AppTile";
-import { Calculator, Droplets, BookOpen } from "lucide-react";
+import { Calculator, Droplets, BookOpen, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -40,13 +40,13 @@ const Index = () => {
           <h2 className="text-2xl font-extrabold text-center mb-8 text-foreground">
             ⚡ Fitur Aplikasi
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <AppTile
               icon={Calculator}
               title="Kalkulator Haid"
-              description="Hitung durasi haid"
+              description="Hitung durasi haid & istihadhah"
               link="/calculator"
-              color="bg-gradient-hero"
+              color="bg-gradient-to-br from-orange-500 to-red-500"
             />
             
             <AppTile
@@ -54,7 +54,7 @@ const Index = () => {
               title="Cek Warna"
               description="Identifikasi warna darah"
               link="/color-checker"
-              color="bg-gradient-hero"
+              color="bg-gradient-to-br from-pink-500 to-rose-600"
             />
             
             <AppTile
@@ -62,30 +62,20 @@ const Index = () => {
               title="Panduan Qadha"
               description="Info qadha shalat"
               link="/qadha-guide"
-              color="bg-gradient-hero"
+              color="bg-gradient-to-br from-purple-500 to-indigo-600"
+            />
+            
+            <AppTile
+              icon={GraduationCap}
+              title="Edukasi Islam"
+              description="Pelajari hukum haid & istihadhah"
+              link="/education"
+              color="bg-gradient-to-br from-blue-500 to-cyan-600"
             />
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="container mx-auto max-w-4xl">
-          <div className="rounded-lg bg-gradient-hero p-10 text-center shadow-xl border-2 border-primary/20">
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-3 text-white">
-              📚 Butuh Informasi Lebih Lanjut?
-            </h2>
-            <p className="text-base text-white/90 mb-6 font-medium">
-              Pelajari lebih dalam tentang hukum haid dan istihadhah dalam Islam
-            </p>
-            <Link to="/education">
-              <Button variant="secondary" size="lg" className="rounded-lg px-10 py-6 text-lg font-bold border-2 border-white bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-200 shadow-lg">
-                Baca Panduan Lengkap →
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
