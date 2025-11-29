@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/Navigation";
-import { FeatureCard } from "@/components/FeatureCard";
+import { AppTile } from "@/components/AppTile";
 import { Calculator, Droplets, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -34,29 +34,35 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard
+      {/* App Tools Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl font-extrabold text-center mb-8 text-foreground">
+            ⚡ Fitur Aplikasi
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <AppTile
               icon={Calculator}
-              title="Kalkulator Masa Haid"
-              description="Hitung dan tentukan apakah darah yang keluar termasuk haid atau istihadhah berdasarkan durasi"
+              title="Kalkulator Haid"
+              description="Hitung durasi haid"
               link="/calculator"
+              color="bg-gradient-hero"
             />
             
-            <FeatureCard
+            <AppTile
               icon={Droplets}
-              title="Cek Warna Darah"
-              description="Identifikasi kategori darah berdasarkan warna untuk membantu menentukan status ibadah"
+              title="Cek Warna"
+              description="Identifikasi warna darah"
               link="/color-checker"
+              color="bg-gradient-hero"
             />
             
-            <FeatureCard
+            <AppTile
               icon={BookOpen}
-              title="Panduan Qadha Shalat"
-              description="Ketahui shalat mana yang perlu diqadha berdasarkan waktu suci yang kamu alami"
+              title="Panduan Qadha"
+              description="Info qadha shalat"
               link="/qadha-guide"
+              color="bg-gradient-hero"
             />
           </div>
         </div>
