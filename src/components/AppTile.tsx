@@ -6,25 +6,27 @@ interface AppTileProps {
   title: string;
   description: string;
   link: string;
-  color?: string;
+  gradient?: string;
 }
 
-export function AppTile({ icon: Icon, title, description, link, color = "bg-primary" }: AppTileProps) {
+export function AppTile({ icon: Icon, title, description, link, gradient = "bg-gradient-hero" }: AppTileProps) {
   return (
     <Link to={link} className="block">
-      <div className="group relative overflow-hidden rounded-2xl bg-card p-6 shadow-md hover:shadow-xl transition-all duration-200 hover:scale-105 border-2 border-border hover:border-primary active:scale-95">
-        <div className="flex flex-col items-center text-center space-y-3">
-          <div className={`p-5 rounded-2xl ${color} shadow-lg group-hover:shadow-xl transition-all duration-200`}>
-            <Icon className="h-10 w-10 text-white" strokeWidth={2.5} />
+      <div className="group relative overflow-hidden rounded-3xl bg-card p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 active:scale-98">
+        <div className="flex flex-col items-center text-center space-y-4">
+          <div className={`p-4 rounded-2xl ${gradient} shadow-soft group-hover:scale-110 transition-transform duration-300`}>
+            <Icon className="h-8 w-8 text-white" strokeWidth={2.5} />
           </div>
           
-          <h3 className="text-lg font-extrabold text-card-foreground group-hover:text-primary transition-colors">
-            {title}
-          </h3>
-          
-          <p className="text-xs text-muted-foreground leading-snug line-clamp-2">
-            {description}
-          </p>
+          <div className="space-y-1">
+            <h3 className="text-base font-bold text-card-foreground">
+              {title}
+            </h3>
+            
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              {description}
+            </p>
+          </div>
         </div>
       </div>
     </Link>

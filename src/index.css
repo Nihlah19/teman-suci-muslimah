@@ -8,83 +8,87 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light Mode - Shopee Style: Orange & Red */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 15%;
+    /* Light Mode - MyTelkomsel Style: Clean Red & White */
+    --background: 0 0% 97%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 9 82% 55%;
+    --primary: 0 85% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 9 100% 96%;
-    --secondary-foreground: 9 82% 55%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 100% 60%;
+    --accent: 210 100% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 85% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 90%;
-    --input: 0 0% 94%;
-    --ring: 9 82% 55%;
+    --input: 0 0% 95%;
+    --ring: 0 85% 50%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    /* Gradients - Shopee Orange to Red */
-    --gradient-hero: linear-gradient(135deg, hsl(9, 82%, 55%), hsl(0, 100%, 60%));
-    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(9, 100%, 98%));
+    /* Gradients - Elegant & Subtle */
+    --gradient-hero: linear-gradient(135deg, hsl(0, 85%, 50%), hsl(340, 85%, 55%));
+    --gradient-card: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 0%, 99%));
+    --gradient-accent: linear-gradient(135deg, hsl(210, 100%, 50%), hsl(200, 100%, 55%));
     
-    /* Shadows - Bold & Colorful */
-    --shadow-soft: 0 2px 8px rgba(238, 77, 45, 0.12);
-    --shadow-glow: 0 4px 20px rgba(238, 77, 45, 0.3);
+    /* Shadows - Soft & Professional */
+    --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 8px 32px rgba(237, 28, 36, 0.15);
   }
 
   .dark {
-    /* Dark Mode - Dark with Vibrant Orange Accent */
-    --background: 0 0% 10%;
+    /* Dark Mode - Premium Dark with Red Accent */
+    --background: 0 0% 8%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 14%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 14%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 9 82% 55%;
+    --primary: 0 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 18%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 18%;
+    --muted: 0 0% 16%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 100% 60%;
+    --accent: 210 100% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 18%;
-    --ring: 9 82% 55%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 0 85% 55%;
 
-    /* Gradients - Vibrant Orange to Red */
-    --gradient-hero: linear-gradient(135deg, hsl(9, 82%, 55%), hsl(0, 100%, 60%));
-    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 14%), hsl(9, 50%, 20%));
+    /* Gradients - Dark Elegant */
+    --gradient-hero: linear-gradient(135deg, hsl(0, 85%, 50%), hsl(340, 85%, 55%));
+    --gradient-card: linear-gradient(135deg, hsl(0, 0%, 12%), hsl(0, 0%, 14%));
+    --gradient-accent: linear-gradient(135deg, hsl(210, 100%, 50%), hsl(200, 100%, 55%));
     
-    /* Shadows - Bold Glow */
-    --shadow-soft: 0 2px 8px rgba(238, 77, 45, 0.2);
-    --shadow-glow: 0 4px 20px rgba(238, 77, 45, 0.4);
+    /* Shadows - Dark Glow */
+    --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.4);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 8px 32px rgba(237, 28, 36, 0.3);
   }
 }
 
@@ -94,6 +98,6 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-jakarta;
   }
 }
