@@ -8,83 +8,83 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light Mode - Pastel Rose & Ivory */
-    --background: 30 40% 98%;
-    --foreground: 340 50% 20%;
+    /* Light Mode - Shopee Style: Orange & Red */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 340 50% 20%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 340 50% 20%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 340 75% 55%;
+    --primary: 9 82% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 345 70% 92%;
-    --secondary-foreground: 340 50% 30%;
+    --secondary: 9 100% 96%;
+    --secondary-foreground: 9 82% 55%;
 
-    --muted: 30 30% 95%;
-    --muted-foreground: 340 20% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 45 90% 75%;
-    --accent-foreground: 340 50% 30%;
+    --accent: 0 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 60%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 340 30% 90%;
-    --input: 340 30% 94%;
-    --ring: 340 75% 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 94%;
+    --ring: 9 82% 55%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(340, 75%, 65%), hsl(45, 90%, 75%));
-    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(345, 70%, 97%));
+    /* Gradients - Shopee Orange to Red */
+    --gradient-hero: linear-gradient(135deg, hsl(9, 82%, 55%), hsl(0, 100%, 60%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(9, 100%, 98%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 24px -4px hsl(340, 50%, 70% / 0.15);
-    --shadow-glow: 0 8px 32px -8px hsl(340, 75%, 55% / 0.25);
+    /* Shadows - Bold & Colorful */
+    --shadow-soft: 0 2px 8px rgba(238, 77, 45, 0.12);
+    --shadow-glow: 0 4px 20px rgba(238, 77, 45, 0.3);
   }
 
   .dark {
-    /* Dark Mode - Charcoal, Plum, Midnight with Rose Gold */
-    --background: 250 20% 12%;
-    --foreground: 30 20% 92%;
+    /* Dark Mode - Dark with Vibrant Orange Accent */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
 
-    --card: 250 18% 16%;
-    --card-foreground: 30 20% 92%;
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 250 18% 16%;
-    --popover-foreground: 30 20% 92%;
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 280 50% 55%;
+    --primary: 9 82% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 250 15% 22%;
-    --secondary-foreground: 30 20% 92%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 250 15% 20%;
-    --muted-foreground: 30 15% 65%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 35 70% 65%;
-    --accent-foreground: 250 20% 12%;
+    --accent: 0 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 60% 50%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 15% 25%;
-    --input: 250 15% 22%;
-    --ring: 280 50% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 9 82% 55%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(280, 50%, 40%), hsl(35, 70%, 50%));
-    --gradient-card: linear-gradient(145deg, hsl(250, 18%, 16%), hsl(280, 30%, 20%));
+    /* Gradients - Vibrant Orange to Red */
+    --gradient-hero: linear-gradient(135deg, hsl(9, 82%, 55%), hsl(0, 100%, 60%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 14%), hsl(9, 50%, 20%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 24px -4px hsl(280, 50%, 20% / 0.4);
-    --shadow-glow: 0 8px 32px -8px hsl(280, 50%, 40% / 0.35);
+    /* Shadows - Bold Glow */
+    --shadow-soft: 0 2px 8px rgba(238, 77, 45, 0.2);
+    --shadow-glow: 0 4px 20px rgba(238, 77, 45, 0.4);
   }
 }
 

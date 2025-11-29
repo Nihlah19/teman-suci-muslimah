@@ -13,22 +13,21 @@ interface FeatureCardProps {
 export function FeatureCard({ icon: Icon, title, description, link, gradient }: FeatureCardProps) {
   return (
     <Link to={link}>
-      <div className="group relative overflow-hidden rounded-3xl bg-card p-8 shadow-soft hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
+      <div className="group relative overflow-hidden rounded-lg bg-card p-6 shadow-lg hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border border-border hover:border-primary">
         <div className={cn(
-          "absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500",
-          gradient || "bg-primary"
+          "absolute -top-10 -right-10 w-32 h-32 rounded-full blur-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-300 bg-primary"
         )} />
         
         <div className="relative z-10">
-          <div className="mb-6 inline-flex p-4 rounded-2xl bg-gradient-hero shadow-soft">
-            <Icon className="h-8 w-8 text-white" />
+          <div className="mb-4 inline-flex p-3 rounded-lg bg-gradient-hero shadow-md">
+            <Icon className="h-7 w-7 text-white" />
           </div>
           
-          <h3 className="text-2xl font-bold mb-3 text-card-foreground group-hover:text-primary transition-colors duration-300">
+          <h3 className="text-xl font-extrabold mb-2 text-card-foreground group-hover:text-primary transition-colors duration-200">
             {title}
           </h3>
           
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             {description}
           </p>
         </div>
