@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -51,9 +54,11 @@ export default {
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-card': 'var(--gradient-card)',
+        'gradient-accent': 'var(--gradient-accent)',
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
+        'medium': 'var(--shadow-medium)',
         'glow': 'var(--shadow-glow)',
       },
       borderRadius: {
