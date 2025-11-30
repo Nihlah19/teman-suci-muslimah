@@ -26,40 +26,48 @@ const Index = () => {
       </section>
 
       {/* App Tools Section */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 -mt-8">
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
-          <div className="grid grid-cols-2 gap-4">
-            <AppTile
-              icon={Calculator}
-              title="Kalkulator Haid"
-              description="Hitung durasi haid & istihadhah"
-              link="/calculator"
-              gradient="bg-gradient-hero"
-            />
+          <div className="grid grid-cols-2 gap-5">
+            <div className="animate-fade-in" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
+              <AppTile
+                icon={Calculator}
+                title="Kalkulator Haid"
+                description="Hitung durasi haid & istihadhah"
+                link="/calculator"
+                gradient="bg-gradient-hero"
+              />
+            </div>
             
-            <AppTile
-              icon={Droplets}
-              title="Cek Warna Darah"
-              description="Identifikasi kategori darah"
-              link="/color-checker"
-              gradient="bg-gradient-accent"
-            />
+            <div className="animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+              <AppTile
+                icon={Droplets}
+                title="Cek Warna Darah"
+                description="Identifikasi kategori darah"
+                link="/color-checker"
+                gradient="bg-gradient-accent"
+              />
+            </div>
             
-            <AppTile
-              icon={BookOpen}
-              title="Panduan Qadha"
-              description="Ketahui shalat yang perlu diqadha"
-              link="/qadha-guide"
-              gradient="bg-gradient-to-br from-purple-500 to-indigo-500"
-            />
+            <div className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+              <AppTile
+                icon={BookOpen}
+                title="Panduan Qadha"
+                description="Ketahui shalat yang perlu diqadha"
+                link="/qadha-guide"
+                gradient="bg-gradient-purple"
+              />
+            </div>
             
-            <AppTile
-              icon={GraduationCap}
-              title="Edukasi Islam"
-              description="Pelajari hukum haid lengkap"
-              link="/education"
-              gradient="bg-gradient-to-br from-emerald-500 to-teal-500"
-            />
+            <div className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+              <AppTile
+                icon={GraduationCap}
+                title="Edukasi Islam"
+                description="Pelajari hukum haid lengkap"
+                link="/education"
+                gradient="bg-gradient-sunset"
+              />
+            </div>
           </div>
         </div>
       </section>
