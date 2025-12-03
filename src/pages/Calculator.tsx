@@ -82,18 +82,22 @@ const Calculator = () => {
         explanation: `Darah pertama ${first} hari + masa suci ${purity} hari = ${first + purity} hari (≥15 hari).\n\nMasa suci perlu disempurnakan menjadi 15 hari, sehingga ${istihadohDays} hari pertama dari darah kedua adalah ISTIHADHAH (penyempurna masa suci).${menstruationDays > 0 ? `\n\nSisa ${menstruationDays} hari berikutnya adalah HAID baru.` : ''}`,
       };
     }
-    // Condition 3: If purity + first bleeding < 15 days → second bleeding is istihadoh
+    // Condition 3: If purity + first bleeding < 15 days → second bleeding starts with menstruation to complete cycle
     else {
+      const daysShort = 15 - (first + purity);
+      const menstruationDays = Math.min(daysShort, second);
+      const istihadohDays = Math.max(0, second - menstruationDays);
+
       calculationResult = {
         condition: 3,
-        description: "Darah Kedua = Istihadhah",
+        description: "Penyempurnaan Siklus Haid",
         firstBloodStatus: `Haid (${first} hari)`,
         purityStatus: `Suci (${purity} hari)`,
         secondBloodBreakdown: {
-          istihadohDays: second,
-          menstruationDays: 0,
+          istihadohDays,
+          menstruationDays,
         },
-        explanation: `Darah pertama ${first} hari + masa suci ${purity} hari = ${first + purity} hari (<15 hari).\n\nKarena total kurang dari 15 hari, maka darah kedua seluruhnya dianggap sebagai ISTIHADHAH selama ${second} hari.`,
+        explanation: `Darah pertama ${first} hari + masa suci ${purity} hari = ${first + purity} hari (<15 hari).\n\nKurang ${daysShort} hari untuk mencapai 15 hari, sehingga ${menstruationDays} hari pertama dari darah kedua adalah HAID (penyempurna siklus).${istihadohDays > 0 ? `\n\nSisa ${istihadohDays} hari berikutnya adalah ISTIHADHAH.` : ''}`,
       };
     }
 
