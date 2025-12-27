@@ -41,14 +41,14 @@ const Calculator = () => {
     if (purity >= 15) {
       calculationResult = {
         condition: 2,
-        description: "Masa Suci ≥ 15 Hari",
+        description: "Masa Bersih ≥ 15 Hari",
         firstBloodStatus: `Haid (${first} hari)`,
-        purityStatus: `Suci Sempurna (${purity} hari)`,
+        purityStatus: `Bersih Sempurna (${purity} hari)`,
         secondBloodBreakdown: {
           istihadohDays: 0,
           menstruationDays: second
         },
-        explanation: `Karena masa suci ${purity} hari (≥15 hari), maka darah kedua seluruhnya dianggap sebagai HAID baru selama ${second} hari.`
+        explanation: `Karena masa bersih ${purity} hari (≥15 hari), maka darah kedua seluruhnya dianggap sebagai HAID baru selama ${second} hari.`
       };
     }
     // Condition 1: If first bleeding + purity >= 15 days → intermittent istihadoh
@@ -60,12 +60,12 @@ const Calculator = () => {
         condition: 1,
         description: "Istihadhah Mutaqotti'ah (Terputus)",
         firstBloodStatus: `Haid (${first} hari)`,
-        purityStatus: `Suci Belum Sempurna (${purity} hari)`,
+        purityStatus: `Bersih Belum Sempurna (${purity} hari)`,
         secondBloodBreakdown: {
           istihadohDays,
           menstruationDays
         },
-        explanation: `Darah pertama ${first} hari + masa suci ${purity} hari = ${first + purity} hari (≥15 hari).\n\nMasa suci perlu disempurnakan menjadi 15 hari, sehingga ${istihadohDays} hari pertama dari darah kedua adalah ISTIHADHAH (penyempurna masa suci).${menstruationDays > 0 ? `\n\nSisa ${menstruationDays} hari berikutnya adalah HAID baru.` : ''}`
+        explanation: `Darah pertama ${first} hari + masa bersih ${purity} hari = ${first + purity} hari (≥15 hari).\n\nMasa bersih perlu disempurnakan menjadi 15 hari, sehingga ${istihadohDays} hari pertama dari darah kedua adalah ISTIHADHAH (penyempurna masa bersih).${menstruationDays > 0 ? `\n\nSisa ${menstruationDays} hari berikutnya adalah HAID baru.` : ''}`
       };
     }
     // Condition 3: If purity + first bleeding < 15 days → second bleeding starts with menstruation to complete cycle
@@ -77,12 +77,12 @@ const Calculator = () => {
         condition: 3,
         description: "Penyempurnaan Siklus Haid",
         firstBloodStatus: `Haid (${first} hari)`,
-        purityStatus: `Suci (${purity} hari)`,
+        purityStatus: `Bersih (${purity} hari)`,
         secondBloodBreakdown: {
           istihadohDays,
           menstruationDays
         },
-        explanation: `Darah pertama ${first} hari + masa suci ${purity} hari = ${first + purity} hari (<15 hari).\n\nKurang ${daysShort} hari untuk mencapai 15 hari, sehingga ${menstruationDays} hari pertama dari darah kedua adalah HAID (penyempurna siklus).${istihadohDays > 0 ? `\n\nSisa ${istihadohDays} hari berikutnya adalah ISTIHADHAH.` : ''}`
+        explanation: `Darah pertama ${first} hari + masa bersih ${purity} hari = ${first + purity} hari (<15 hari).\n\nKurang ${daysShort} hari untuk mencapai 15 hari, sehingga ${menstruationDays} hari pertama dari darah kedua adalah HAID (penyempurna siklus).${istihadohDays > 0 ? `\n\nSisa ${istihadohDays} hari berikutnya adalah ISTIHADHAH.` : ''}`
       };
     }
     setResult(calculationResult);
@@ -142,8 +142,9 @@ const Calculator = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">
-                    <div className="flex items-center gap-2">Masa Bersih<div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                      Masa Suci
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                      Masa Bersih
                     </div>
                   </TableCell>
                   <TableCell>
@@ -223,7 +224,7 @@ const Calculator = () => {
                     <TableCell className="font-medium">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                        Masa Suci
+                        Masa Bersih
                       </div>
                     </TableCell>
                     <TableCell>
