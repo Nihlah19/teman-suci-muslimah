@@ -17,32 +17,35 @@ const QadhaGuide = () => {
     const [hours, minutes] = purificationTime.split(":").map(Number);
     const timeInMinutes = hours * 60 + minutes;
 
-    // Waktu shalat (perkiraan umum)
-    const subuhStart = 4 * 60 + 30; // 04:30
-    const subuhEnd = 6 * 60; // 06:00
-    const dhuhurStart = 12 * 60; // 12:00
-    const dhuhurEnd = 15 * 60; // 15:00
+    // Waktu shalat sesuai jadwal
+    const subuhStart = 4 * 60; // 04:00
+    const subuhEnd = 5 * 60 + 30; // 05:30
+    const dzuhurStart = 11 * 60 + 45; // 11:45
+    const dzuhurEnd = 15 * 60; // 15:00
     const asarStart = 15 * 60; // 15:00
-    const asarEnd = 18 * 60; // 18:00
-    const maghribStart = 18 * 60; // 18:00
-    const maghribEnd = 19 * 60 + 15; // 19:15
-    const isyaStart = 19 * 60 + 15; // 19:15
+    const asarEnd = 17 * 60 + 45; // 17:45
+    const maghribStart = 17 * 60 + 45; // 17:45
+    const maghribEnd = 18 * 60 + 30; // 18:30
+    const isyaStart = 18 * 60 + 30; // 18:30
 
     if (timeInMinutes >= subuhStart && timeInMinutes < subuhEnd) {
-      // Suci waktu Subuh
-      setResult(["✓ Waktu Suci: Waktu Subuh", "", "Shalat yang wajib:", "• Subuh", "", "Tidak wajib qadha shalat Isya.", "", "Karena kamu suci di waktu Subuh, maka wajib shalat Subuh. Tidak perlu qadha shalat Isya karena waktu Isya sudah lewat sebelum suci."]);
-    } else if (timeInMinutes >= dhuhurStart && timeInMinutes < dhuhurEnd) {
-      // Suci waktu Dhuhur
-      setResult(["✓ Waktu Suci: Waktu Dhuhur", "", "Shalat yang wajib:", "• Dhuhur", "", "Tidak wajib qadha shalat Subuh (jika darah haid masih keluar).", "", "Karena kamu suci di waktu Dhuhur, maka wajib shalat Dhuhur. Tidak perlu qadha shalat Subuh karena saat Subuh masih dalam kondisi haid."]);
+      // Suci waktu Subuh (04:00 - 05:30)
+      setResult(["✓ Waktu Bersih: Waktu Subuh", "", "Shalat yang wajib:", "• Subuh", "", "Tidak wajib qadha shalat Isya.", "", "Karena kamu bersih di waktu Subuh, maka wajib shalat Subuh. Tidak perlu qadha shalat Isya karena waktu Isya sudah lewat sebelum bersih."]);
+    } else if (timeInMinutes >= subuhEnd && timeInMinutes < dzuhurStart) {
+      // Waktu di luar shalat (05:30 - 11:45)
+      setResult(["ℹ Waktu Di Luar Waktu Shalat", "", "Kamu bersih di antara waktu Subuh dan Dzuhur (05:30 - 11:45).", "", "📌 Keterangan:", "• Tidak wajib qadha shalat Subuh karena waktu Subuh sudah habis.", "• Tunggulah masuk waktu Dzuhur, lalu segeralah shalat Dzuhur.", "", "Karena waktu Subuh sudah berlalu dan waktu Dzuhur belum masuk, kamu tidak memiliki kewajiban qadha shalat apapun saat ini. Namun, bersiaplah untuk shalat Dzuhur tepat waktu."]);
+    } else if (timeInMinutes >= dzuhurStart && timeInMinutes < dzuhurEnd) {
+      // Suci waktu Dzuhur (11:45 - 15:00)
+      setResult(["✓ Waktu Bersih: Waktu Dzuhur", "", "Shalat yang wajib:", "• Dzuhur", "", "Tidak wajib qadha shalat Subuh.", "", "Karena kamu bersih di waktu Dzuhur, maka wajib shalat Dzuhur. Tidak perlu qadha shalat Subuh karena saat Subuh masih dalam kondisi haid."]);
     } else if (timeInMinutes >= asarStart && timeInMinutes < asarEnd) {
-      // Suci waktu Asar
-      setResult(["✓ Waktu Suci: Waktu Asar", "", "Shalat yang wajib:", "• Asar", "• Qadha Dhuhur", "", "📌 Catatan: Shalat Asar bisa dijamak dengan Dhuhur.", "", "Karena kamu suci di waktu Asar, maka wajib shalat Asar dan qadha shalat Dhuhur. Boleh dijamak ta'khir (Dhuhur + Asar di waktu Asar)."]);
+      // Suci waktu Asar (15:00 - 17:45)
+      setResult(["✓ Waktu Bersih: Waktu Asar", "", "Shalat yang wajib:", "• Asar", "• Qadha Dzuhur", "", "📌 Catatan: Shalat Asar bisa dijamak dengan Dzuhur.", "", "Karena kamu bersih di waktu Asar, maka wajib shalat Asar dan qadha shalat Dzuhur. Boleh dijamak ta'khir (Dzuhur + Asar di waktu Asar)."]);
     } else if (timeInMinutes >= maghribStart && timeInMinutes < maghribEnd) {
-      // Suci waktu Maghrib
-      setResult(["✓ Waktu Suci: Waktu Maghrib", "", "Shalat yang wajib:", "• Maghrib", "", "Tidak wajib qadha shalat Asar.", "", "📌 Catatan: Shalat Maghrib TIDAK bisa dijamak dengan shalat Asar.", "", "Karena kamu suci di waktu Maghrib, maka wajib shalat Maghrib saja. Tidak perlu qadha shalat Asar karena Maghrib tidak bisa dijamak dengan Asar."]);
+      // Suci waktu Maghrib (17:45 - 18:30)
+      setResult(["✓ Waktu Bersih: Waktu Maghrib", "", "Shalat yang wajib:", "• Maghrib", "", "Tidak wajib qadha shalat Asar.", "", "📌 Catatan: Shalat Maghrib TIDAK bisa dijamak dengan shalat Asar.", "", "Karena kamu bersih di waktu Maghrib, maka wajib shalat Maghrib saja. Tidak perlu qadha shalat Asar karena Maghrib tidak bisa dijamak dengan Asar."]);
     } else if (timeInMinutes >= isyaStart || timeInMinutes < subuhStart) {
-      // Suci waktu Isya (termasuk malam sampai sebelum Subuh)
-      setResult(["✓ Waktu Suci: Waktu Isya", "", "Shalat yang wajib:", "• Isya", "• Qadha Maghrib", "", "📌 Catatan: Boleh dijamak Isya dengan Maghrib.", "", "Karena kamu suci di waktu Isya, maka wajib shalat Isya dan qadha shalat Maghrib. Boleh dijamak ta'khir (Maghrib + Isya di waktu Isya)."]);
+      // Suci waktu Isya (18:30 - 04:00)
+      setResult(["✓ Waktu Bersih: Waktu Isya", "", "Shalat yang wajib:", "• Isya", "• Qadha Maghrib", "", "📌 Catatan: Boleh dijamak Isya dengan Maghrib.", "", "Karena kamu bersih di waktu Isya, maka wajib shalat Isya dan qadha shalat Maghrib. Boleh dijamak ta'khir (Maghrib + Isya di waktu Isya)."]);
     } else {
       setResult(["ℹ Waktu Tidak Teridentifikasi", "", "Silakan masukkan waktu yang valid untuk mengetahui shalat yang perlu dilakukan."]);
     }
